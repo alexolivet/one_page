@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>one page layout - elwebman.nl</title>
+  
+
+  
+  <link rel="stylesheet" href="css/main_style.css">
+
+  
+</head>
+
+<body>
+  <nav>
+
+    <div id="mainNav">
+      <a href="#page-one">Home |</a>
+      <a href="#page-two">About |</a>
+      <a href="#page-three">Portfolio |</a>
+      <a href="#page-four">Contact |</a>
+    </div>
+    <span id="menu" onclick="openNav()">&#9776; open</span>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#page-one">Home</a><span>|<span>
+      <a href="#page-two">About</a><span>|<span>
+      <a href="#page-three">Portfolio</a><span>|<span>
+      <a href="#page-four">Contact</a>
+    </div>
+
+
+  </nav>
+
+  <section id="page-one">
+    <h2>Simple One-Page Layout<br>
+      w/ Smooth Scrolling
+    </h2>
+  </section>
+  <section id="page-two">
+    <h2>Page Two</h2>
+  </section>
+  <section id="page-three">
+    <h2>Page Three</h2>
+  </section>
+  <section id="page-four">
+    <h2>Page Four</h2>
+  </section>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  <script src="js/index.js"></script>
+
+</body>
+</html>

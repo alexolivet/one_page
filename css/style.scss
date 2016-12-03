@@ -1,0 +1,183 @@
+@import "reset_meyer";
+@import "bourbon/bourbon";
+
+// font awesome
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
+//Roboto Slab
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+$font-stack:'Roboto Slab', serif;
+
+
+//box sizing mixin
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model;
+
+  // Safari <= 5
+  -moz-box-sizing: $box-model;
+
+  // Firefox <= 19
+  box-sizing: $box-model;
+}
+
+
+//base colors
+$black:#000;
+$white:#fff;
+$red: #F44336;
+$pink: #E91E63;
+$purple: #9C27B0;
+$deep-purple: #673AB7;
+$indigo: #3F51B5;
+$blue: #2196F3;
+$light-blue: #03A9F4;
+$cyan: #00BCD4;
+$teal: #009688;
+$green: #4CAF50;
+$light-green: #8BC34A;
+$lime: #CDDC39;
+$yellow: #FFEB3B;
+$amber: #FFC107;
+$orange: #FF9800;
+$deep-orange: #FF5722;
+$brown: #795548;
+$grey: #9E9E9E;
+$blue-grey: #607D8B;
+
+
+// useful HTML classes
+.left {
+  float: left !important;
+}
+
+.right {
+  float: right !important;
+}
+
+//media queries
+$mq-1024: "(max-width: 1024px)";
+$mq-700: "(max-width: 700px)";
+
+
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+//min-height is set to make sure the div covers 100% of the viewport.
+//playing with the vh value allows for nice layout
+html, body, #page-one, #page-two, #page-three {
+	height:auto;
+	min-height: 100vh;
+  font-family: $font-stack;
+}
+
+//last page needs to cover entire viewport
+#page-four {
+  height:auto;
+  min-height: 100vh;
+}
+
+#page-one, #page-two, #page-three, #page-four {padding-top:2em;}
+
+
+
+h2 {font-size:3em; padding-top:1em; text-align:center;}
+
+#page-one {background-color:$white;}
+#page-two {background-color:$grey;}
+#page-three {background-color:$green;}
+#page-four {background-color:$teal;}
+
+
+
+//menu
+nav {
+  background-color: $indigo;
+  color: $white;
+  padding-left:1em;
+  position:fixed; 
+  top: 0em; 
+  width:96%; 
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: auto;
+  margin-bottom: 10px;
+  max-width: 62.5em; // 1,000px Maximum
+  min-width: 20em; // 320px Minimum
+  line-height: 3em;
+  overflow: visible;
+  border: 1px solid lighten($yellow, 8%);
+  border-radius: 6px;
+}
+@media #{$mq-1024} {
+ padding:0;
+ color: $red;
+}
+
+//menu of big screen
+#mainNav {
+  a {
+    color:$white; 
+    text-decoration:none;
+    display:inline-block;
+    padding:0 1em;
+
+    &:hover {
+      color: $yellow;
+    }
+    @media #{$mq-1024} {
+     display: none;
+   }
+ }
+}
+//menu on small screen
+//icon
+#menu{
+  font-size:30px;
+  cursor:pointer;
+  display:none;
+  @media #{$mq-1024} {
+   display: block;
+ }
+}
+
+
+//side nav
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: $black;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  a {
+    padding-top:8px;
+    padding-right:8px;
+    padding-bottom:8px;
+    padding-left:32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: $grey;
+    display: block;
+    transition: 0.3s;
+    &:hover{
+      color: $white;
+    }
+  }
+  .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+}
+
+
+
