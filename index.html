@@ -23,10 +23,10 @@
     <span id="menu" onclick="openNav()">&#9776; open</span>
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="#page-one">Home</a><span>|<span>
-      <a href="#page-two">About</a><span>|<span>
-      <a href="#page-three">Portfolio</a><span>|<span>
-      <a href="#page-four">Contact</a>
+      <a href="#page-one" onclick="closeNav()">Home</a>
+      <a href="#page-two" onclick="closeNav()">About</a>
+      <a href="#page-three" onclick="closeNav()">Portfolio</a>
+      <a href="#page-four" onclick="closeNav()">Contact</a>
     </div>
 
 
@@ -36,9 +36,34 @@
     <h2>Simple One-Page Layout<br>
       w/ Smooth Scrolling
     </h2>
+      
   </section>
   <section id="page-two">
     <h2>Page Two</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <!-- This content will take up 3/12 (or 1/4) of the container -->
+        </div>
+        <div class="col-3">
+          <!-- This content will take up 3/12 (or 1/4) of the container -->
+        </div>
+        <div class="col-6">
+          <!-- This content will take up 6/12 (or 1/2) of the container -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <!-- This content will take up 3/12 (or 1/4) of the container -->
+        </div>
+        <div class="col-5">
+          <!-- This content will take up 3/12 (or 1/4) of the container -->
+        </div>
+        <div class="col-6">
+          <!-- This content will take up 6/12 (or 1/2) of the container -->
+        </div>
+      </div>
+    </div>
   </section>
   <section id="page-three">
     <h2>Page Three</h2>

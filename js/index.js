@@ -30,9 +30,9 @@ $(document).ready(function() {	//start document ready
 
 //open - close menu
 function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("mySidenav").style.width = "100%";
 }
-
+//open - close menu
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }

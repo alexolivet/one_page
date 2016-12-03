@@ -1,4 +1,5 @@
 @import "reset_meyer";
+@import "simple-grid";
 @import "bourbon/bourbon";
 
 // font awesome
@@ -67,17 +68,37 @@ $mq-700: "(max-width: 700px)";
 
 //min-height is set to make sure the div covers 100% of the viewport.
 //playing with the vh value allows for nice layout
-html, body, #page-one, #page-two, #page-three {
+html, body, #page-one,#page-two, #page-three,#page-four {
 	height:auto;
 	min-height: 100vh;
   font-family: $font-stack;
 }
 
-//last page needs to cover entire viewport
-#page-four {
-  height:auto;
-  min-height: 100vh;
+
+#page-one {
+background-image: url("../images/section1.jpg");
+background-size: cover;
+background-repeat:no-repeat;
+background-position:center;
 }
+
+#page-two {
+background-image: url("../images/section2.png");
+background-size: contain;
+}
+#page-three {
+background-image: url("../images/section3.png");
+background-size: contain;
+background-repeat:no-repeat;
+background-position:center;
+}
+#page-four{
+background-image: url("../images/section4.png");
+background-size: contain;
+background-repeat:no-repeat;
+background-position:center;
+}
+
 
 #page-one, #page-two, #page-three, #page-four {padding-top:2em;}
 
@@ -109,11 +130,11 @@ nav {
   line-height: 3em;
   overflow: visible;
   border: 1px solid lighten($yellow, 8%);
-  border-radius: 6px;
-}
-@media #{$mq-1024} {
- padding:0;
- color: $red;
+  border-radius: 6px; 
+  @media #{$mq-1024} {
+     background: none;
+     border: none;
+   }
 }
 
 //menu of big screen
@@ -132,14 +153,15 @@ nav {
    }
  }
 }
-//menu on small screen
-//icon
+
+//menu on small screen - icon
 #menu{
   font-size:30px;
   cursor:pointer;
   display:none;
   @media #{$mq-1024} {
    display: block;
+   color:$black;
  }
 }
 
@@ -149,7 +171,7 @@ nav {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   top: 0;
   left: 0;
   background-color: $black;
@@ -179,5 +201,9 @@ nav {
   }
 }
 
+.row [class^="col"]{
+  background-color:red;
+  height: 100px;
+}
 
 
