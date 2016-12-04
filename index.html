@@ -36,7 +36,7 @@
     <h2>Simple One-Page Layout<br>
       w/ Smooth Scrolling
     </h2>
-      
+
   </section>
   <section id="page-two">
     <h2>Page Two</h2>
@@ -44,6 +44,14 @@
       <div class="row">
         <div class="col-3">
           <!-- This content will take up 3/12 (or 1/4) of the container -->
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="ZFYUTWUT9HHWE">
+            <input type="image" src="https://www.paypalobjects.com/en_US/NL/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+          </form>
+
+
         </div>
         <div class="col-3">
           <!-- This content will take up 3/12 (or 1/4) of the container -->
@@ -71,6 +79,16 @@
   <section id="page-four">
     <h2>Page Four</h2>
   </section>
+
+  <div id="boxes">
+  <div style="top: 199.5px; left: 551.5px; display: none;" id="dialog" class="window"> Popup Title
+    <div id="lorem">
+      <p>Nunc molestie leo vitae est rhoncus mattis. Sed eget tellus eu est aliquet molestie. Aliquam nec felis rhoncus, suscipit sapien eget, elementum felis. Vivamus lorem nulla, ornare vel dapibus sit amet, suscipit eu purus. Sed dui libero, faucibus vel nibh vitae, cursus consequat augue. Nulla facilisi. Aenean facilisis elit nec eros facilisis suscipit.</p>
+    </div>
+    <div id="popupfoot"> <a href="#" class="close agree">I agree</a> | <a class="agree"style="color:red;" href="http://www.cartoonnetwork.com/">I do not agree</a> </div>
+  </div>
+  <div style="width: 1478px; font-size: 32pt; color:white; height: 602px; display: none; opacity: 0.8;" id="mask"></div>
+</div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
   <script src="js/index.js"></script>
