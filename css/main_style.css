@@ -159,7 +159,7 @@ table {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-html, body, #page-one, #page-two, #page-three, #page-four {
+html, body, #page-one, #page-two, #page-three, #page-four, #page-five {
   height: auto;
   min-height: 100vh;
   font-family: "Roboto Slab", serif; }
@@ -186,7 +186,13 @@ html, body, #page-one, #page-two, #page-three, #page-four {
   background-repeat: no-repeat;
   background-position: center; }
 
-#page-one, #page-two, #page-three, #page-four {
+#page-five {
+  background-image: url("../images/section1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+#page-one, #page-two, #page-three, #page-four, #page-five {
   padding-top: 2em; }
 
 h2 {
@@ -205,6 +211,9 @@ h2 {
 
 #page-four {
   background-color: #009688; }
+
+#page-five {
+  background-color: #F44336; }
 
 nav {
   background-color: #3F51B5;
@@ -310,5 +319,8 @@ nav {
 .maintext {
   text-align: center;
   text-decoration: none; }
+
+#textarea {
+  display: none; }
 
 /*# sourceMappingURL=main_style.css.map */

@@ -68,7 +68,7 @@ $mq-700: "(max-width: 700px)";
 
 //min-height is set to make sure the div covers 100% of the viewport.
 //playing with the vh value allows for nice layout
-html, body, #page-one,#page-two, #page-three,#page-four {
+html, body, #page-one,#page-two, #page-three,#page-four,#page-five {
 	height:auto;
 	min-height: 100vh;
   font-family: $font-stack;
@@ -98,9 +98,15 @@ background-size: contain;
 background-repeat:no-repeat;
 background-position:center;
 }
+#page-five {
+background-image: url("../images/section1.jpg");
+background-size: cover;
+background-repeat:no-repeat;
+background-position:center;
+}
 
 
-#page-one, #page-two, #page-three, #page-four {padding-top:2em;}
+#page-one, #page-two, #page-three, #page-four , #page-five{padding-top:2em;}
 
 
 
@@ -110,6 +116,7 @@ h2 {font-size:3em; padding-top:1em; text-align:center;}
 #page-two {background-color:$grey;}
 #page-three {background-color:$green;}
 #page-four {background-color:$teal;}
+#page-five {background-color:$red;}
 
 
 
@@ -236,3 +243,5 @@ nav {
   text-align: center;
   text-decoration: none;
 }
+
+#textarea{display:none;}

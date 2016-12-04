@@ -74,6 +74,16 @@ $(document).ready(function() { //start document ready
 
     }, 2000); // timeout value
 
+
+  var oldvalue;
+    var newvalue;
+    $(".buttons").click(function () {
+        oldvalue = $("#textarea").val();  //GET THE VALUE OF TEXTBOX WHEN USER CLICKS
+        if (oldvalue) {newvalue = ', '+$(this).html();} // IF THE TEXTBOX ISN'T BLANK, PLACE A COMMA BEFORE THE NEW VALUE
+        else {newvalue = $(this).html();} //IF THE TEXTBOX IS BLANK, DON'T ADD A COMMA
+        $("#textarea").val(oldvalue + newvalue + " \n"); //PLACE THE ORIGINAL AND NEW VALUES INTO THE TEXTBOX.
+    });
+
 }); //end document ready
 
 
