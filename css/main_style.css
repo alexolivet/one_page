@@ -288,8 +288,20 @@ nav {
     margin-left: 50px; }
 
 .row [class^="col"] {
-  background-color: red;
-  height: 100px; }
+  background-color: orange; }
+  .row [class^="col"] p {
+    padding: 10px;
+    line-height: 1.85em;
+    margin: 0;
+    text-align: left; }
+    .row [class^="col"] p:first-letter {
+      font-size: 3.5em;
+      line-height: 1em;
+      font-weight: 400;
+      float: left;
+      margin: 0 0.107em 0 0; }
+    .row [class^="col"] p:first-line {
+      font-weight: 800; }
 
 #mask {
   position: absolute;
@@ -322,5 +334,15 @@ nav {
 
 #textarea {
   display: none; }
+
+.buttons {
+  background-color: #4CAF50;
+  border-radius: 999em;
+  width: 76px;
+  height: 76px;
+  z-index: 1;
+  cursor: pointer;
+  display: inline;
+  float: right; }
 
 /*# sourceMappingURL=main_style.css.map */
