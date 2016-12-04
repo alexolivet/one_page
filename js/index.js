@@ -46,12 +46,12 @@ $(document).ready(function() { //start document ready
         $('#mask').fadeIn(1000);
         $('#mask').fadeTo("slow", 0.9);
 
-        //Get the window height and width
-        var winH = $(window).height() / 2;
-        var winW = $(window).width() / 2;
+    //Get the window height and width
+    var winH = $(window).height();
+    var winW = $(window).width();
 
         //Set the popup window to center
-        $(id).css('top', winH / 2 - $(id).height() / 2);
+        $(id).css('top', winH / 3 - $(id).height() / 2);
         $(id).css('left', winW / 2 - $(id).width() / 2);
 
         //transition effect
@@ -77,6 +77,8 @@ $(document).ready(function() { //start document ready
 }); //end document ready
 
 
+
+
 //open - close slide menu
 //the desired width can be changed here
 function openNav() {
@@ -86,3 +88,7 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
+
+
+
+
