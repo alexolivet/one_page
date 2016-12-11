@@ -341,4 +341,12 @@ nav {
   display: inline;
   float: right; }
 
+textarea {
+  width: 200px;
+  min-height: 70px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  color: #444;
+  padding: 5px; }
+
 /*# sourceMappingURL=main_style.css.map */

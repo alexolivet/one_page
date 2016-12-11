@@ -9,11 +9,14 @@ if(empty($_POST['message']))
 $name = $_POST['name']; 
 $email_address = $_POST['email']; 
 $message = $_POST['message'];
-$stickers=$_POST['message_1']; 
+$stickers=$_POST['message_1'];
+$quantity=$_POST['quantity'];
+
 
 if( empty($errors))
 {
 	$to = $email_address;
+	$to1 = $myemail;
 	$email_subject = "Thank you : $name for contacting Stickers by elwebman.nl";
 	$email_body = "A few words on how we operate. ".	// this is the content of the email
 	" <html>
@@ -44,7 +47,7 @@ if( empty($errors))
 	<p>We are preparing the stickers.</p>
 	<br>
 	<br>
-	<p>You have made  the following comment on our website</p>
+	<p>You have made the following comment on our website.</p>
 	<br>
 	<h1>\n $message</h1>
 	<p>You have expressed interest in the following sticker:</p>
@@ -52,9 +55,10 @@ if( empty($errors))
 	<p>Delivery will take more or less 10 days depending on where you are located.</p>
 	<br>
 	<br>
+	<p>You have ordered a total of \n $quantity sticker(s).</p>
 	<br>
-	<p> <a href=\"http://www.stickers.elwebman.nl/pwg/\">Stickers by elwebman.nl </a> is available 24 hours a day</p>
-	<p>If your email address is not \n $email_address, then please delete this email</p>
+	<p> <a href=\"http://www.stickers.elwebman.nl/pwg/\">Stickers by elwebman.nl </a> is available 24 hours a day.</p>
+	<p>If your email address is not \n $email_address, then please delete this email.</p>
 	<p>Thank you for contacting stickers by elwebman.nl</p>
 	<p>Check us on <a href=\"https://github.com/alexolivet/\">Github</a>.</p>   
 	</body>
@@ -65,8 +69,14 @@ if( empty($errors))
 	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 // reply address
 	$headers .= "Reply-To: $email_address";
-	
+	$headers.= "cc: " . $myemail. " <" . $myemail . ">" . "\r\n" ;
+
+
+	//first mail instance for visitor
 	mail($to,$email_subject,$email_body,$headers);
+	//second mail instance for webmaster
+	//this means 2 emails are sent
+	mail($to1,$email_subject,$email_body,$headers);
 	//redirect to the 'thank you' page
 	header('Location: http://stickers.elwebman.nl/contact-form-thank-you.html');
 } 

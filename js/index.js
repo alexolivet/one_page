@@ -42,7 +42,7 @@ $(document).ready(function() { //start document ready
             'height': maskHeight
         });
 
-        //transition effect		
+        //transition effect     
         $('#mask').fadeIn(1000);
         $('#mask').fadeTo("slow", 0.9);
 
@@ -72,13 +72,14 @@ $(document).ready(function() { //start document ready
             $('.window').hide();
         }); //end modal window
 
-    }, 2000); // timeout value
+    }, 782000); // timeout value
 
 
     //add value to textarea
-  var oldvalue;
+    //only add value on first click
+    var oldvalue;
     var newvalue;
-    $(".buttons").click(function () {
+    $(".buttons").one('click',function () {
         oldvalue = $(".textarea").val();  //GET THE VALUE OF TEXTBOX WHEN USER CLICKS
         if (oldvalue) {newvalue = ', '+$(this).html();} // IF THE TEXTBOX ISN'T BLANK, PLACE A COMMA BEFORE THE NEW VALUE
         else {newvalue = $(this).html();} //IF THE TEXTBOX IS BLANK, DON'T ADD A COMMA
@@ -88,9 +89,33 @@ $(document).ready(function() { //start document ready
         //clears the content of textarea
         //not best but good enough for now
         $(".clear").click(function(e) {
-        e.preventDefault();
-        $(".textarea").val('');
-    });
+            e.preventDefault();
+            $(".textarea").val('uItem');
+        });
+
+            //when button is clicked add item to list
+            $("button").click(function(){
+                var value=$(this).attr("value");
+                if (typeof value === "undefined") {
+                //do nothing
+            }
+            else{
+                $("ol").append("<li>"+ value + "<a href='javascript:void(0); 'onclick='decrementValue();' class='remove'>×</a></li>"); 
+            }
+        });
+           //remove item of choice
+           $(document).on("click", "a.remove" , function(e) {
+            $(this).parent().remove();
+        });
+
+
+           $('.Backspace').on('click', function () {
+            values.pop();
+            $('#textarea').val(values.join(" "));
+        });
+
+
+
 
 }); //end document ready
 
@@ -106,6 +131,31 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
+
+
+function incrementValue()
+{
+    var amount = parseInt(document.getElementById('number').value);
+    amount = isNaN(amount) ? 0 : amount;
+    if(amount<15){
+        amount++;
+            document.getElementById('number').value = amount; //count input field
+             document.getElementById('number_form').value = amount;//copy count to form
+
+
+         }
+     }
+     function decrementValue()
+     {
+        var amountMinus = parseInt(document.getElementById('number').value);
+        amountMinus = isNaN(amountMinus) ? 0 : amountMinus;
+        if(amountMinus>=1){
+            amountMinus--;
+            document.getElementById('number').value = amountMinus;//count input field
+             document.getElementById('number_form').value = amountMinus;//copy count to form
+         }
+
+     }
 
 
 
