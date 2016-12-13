@@ -96,16 +96,22 @@ $(document).ready(function() { //start document ready
             //when button is clicked add item to list
             $("button").click(function(){
                 var value=$(this).attr("value");
-                if (typeof value === "undefined") {
+                if (typeof value === "undefined") { //disabling this button so it does not add but only remove item from the list
                 //do nothing
             }
             else{
                 $("ol").append("<li>"+ value + "<a href='javascript:void(0); 'onclick='decrementValue();' class='remove'>×</a></li>"); 
+                $("#textarea_2").append("* "+value+ "\n"); 
+
+
             }
         });
            //remove item of choice
            $(document).on("click", "a.remove" , function(e) {
             $(this).parent().remove();
+    var textVal = $('#textarea_2').val().split(' ');
+    textVal.pop();
+    $('#textarea_2').val(textVal.join(' '));
         });
 
 
@@ -156,7 +162,6 @@ function incrementValue()
          }
 
      }
-
 
 
 
